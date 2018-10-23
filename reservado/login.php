@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     //Validar credenciais
     if(empty($email_err) && empty($password_err)){
-        $sql = "SELECT id, admin, email, password, name, active, avatar, darkTheme FROM users WHERE email = ?";
+        $sql = "SELECT id, admin_email, admin_password FROM admin_table WHERE admin_email = ?";
 
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $param_email);
@@ -49,12 +49,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             if($active == 1){
                               session_start();
                               $_SESSION["id"] = $id;
-                              $_SESSION["admin"] = $admin;
-                              $_SESSION["email"] = $email;
-                              $_SESSION["name"] = $name;
-                              $_SESSINO["active"] = $active;
-                              $_SESSION["avatar"] = $avatar;
-                              $_SESSION["dark_theme"] = $darkTheme;
+                              $_SESSION["admin_email"] = $admin;
+                              
 
                               if($admin == true){
                                   header("location: admin/adminHomePage.php");

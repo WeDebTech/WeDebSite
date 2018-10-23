@@ -2,10 +2,10 @@
 /* Credenciais da base de dados. Assumindo que se está
 a correr o servidor MySQL com definições predefinidas
 (user 'root' sem password) */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'atwsite');
+define('DB_SERVER', 'locahost');
+define('DB_USERNAME', 'u338517545_geral');
+define('DB_PASSWORD', '3rRs1wmHJaup');
+define('DB_NAME', 'u338517545_geral');
 
 function openConnection(){
   //Tentar conectar-se à base de dados MySQL
